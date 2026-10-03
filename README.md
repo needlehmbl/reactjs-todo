@@ -1,12 +1,29 @@
-# React + Vite
+# reactjs-todo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple todo app built with React 19 and Vite. Add, edit, and delete tasks; the list persists in `localStorage` so it survives page reloads.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add / edit / delete todos
+- `localStorage` persistence (loads saved todos on start)
+- Component split: `Todoinput`, `TodoList`, `TodoCard`
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React 19, Vite 6, ESLint. No backend, no database.
+
+## Run
+
+```bash
+npm install
+npm run dev     # start dev server
+npm run build   # production build
+npm run lint    # eslint
+```
+
+## Files
+
+- `src/App.jsx` - state, add/edit/delete handlers, `localStorage` sync
+- `src/components/Todoinput.jsx` - new-task input
+- `src/components/TodoList.jsx` - list rendering
+- `src/components/TodoCard.jsx` - single row with edit/delete buttons
